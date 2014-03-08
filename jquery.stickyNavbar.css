@@ -188,7 +188,7 @@ p {
   border-bottom: 5px solid #E6904B;
 }
 
-#contact, #download, #jquery {
+#contact, #download, #jquery, #examples {
   background: #DE846C;
   min-height: 100%;
   height: auto;
@@ -220,6 +220,10 @@ p {
 code {
   font-family: Consolas, monospace !important;
   font-style: bold;
+}
+/* WP Cleanup */
+#wpstats {
+  display: none;
 }
 
 

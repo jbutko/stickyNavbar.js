@@ -29,7 +29,7 @@
 			</p>
 		</div>
 		<!-- <i class="fa fa-hand-o-down fa-4x"></i> -->
-		<p class="hand-font">
+		<p class="hand-font align-center">
 			Scroll down under the navigation bar to see stickyNavbar.js in action!<span class="glyphicon glyphicon-chevron-down wobble slideDown"></span>
 		</p>
 	</div>
@@ -60,6 +60,9 @@
 				<a href="#options">Options</a>
 				</li>
 				<li class="menuItem">
+				<a href="#examples">Examples</a>
+				</li>
+				<li class="menuItem">
 				<a href="#credits">Credits</a>
 				</li>
 				<li class="menuItem">
@@ -73,19 +76,17 @@
 	<!-- START Download -->
 	<div id="download" class="scrollto">
 		<div class="wrap">
-			<h2>1. Download</h2>
+			<h2 class="wow fadeInDown animated">1. Download</h2>
 			<p>
 				As a first step download stickyNavbar.js from GitHub:
 			</p>
 			<pre class="brush: html">
-				 Downlod links goes here:
-			</pre>
+				 Downlod links goes here:</pre>
 			<p>
 				Or get the package from Bower:
 			</p>
 			<pre class="brush: bash">
-				 bower install stickyNavbar
-			</pre>
+				 bower install stickyNavbar</pre>
 		</div>
 		<!-- End Wrap -->
 	</div>
@@ -93,9 +94,9 @@
 	<!-- START Setup -->
 	<div id="setup" class="scrollto">
 		<div class="wrap">
-			<h2>2. Setup</h2>
+			<h2 class="wow fadeInLeft animated">2. Setup</h2>
 			<p>
-				Include reference to jQuery library, jQuery easing plugin (optional), animate.CSS (optional) and stickyNavbar itself at the bottom of the page before the closing <code>body</code> tag:
+				Include reference to jQuery library, jQuery easing plugin (optional), animate.CSS (optional, IE10+ only) and stickyNavbar itself at the bottom of the page before the closing <code>body</code> tag:
 			</p>
 			<pre class="brush: html">
 				</ this goes inside the header tag>
@@ -103,8 +104,7 @@
 				</ all these references goes before the closing body tag>
 				<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 				<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-				<script src="js/jquery.stickyNavbar.min.js"></script>
-			</pre>
+				<script src="js/jquery.stickyNavbar.min.js"></script></pre>
 		</div>
 		<!-- End Wrap -->
 	</div>
@@ -112,13 +112,29 @@
 	<!-- START HTML Markup -->
 	<div id="markup" class="scrollto">
 		<div class="wrap">
-			<h2>3. HTML Markup</h2>
+			<h2 class="wow fadeInUp">3. HTML Markup</h2>
 			<p>
 				To properly use stickyNavbar.js setup an usual HTML markup for the navigation:
 			</p>
 			<pre class="brush: html">
-				 &lt;div id=&quot;header&quot;&gt; &lt;nav id=&quot;nav&quot;&gt; &lt;ul class=&quot;nav navbar-nav&quot;&gt; &lt;li&gt; &lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt; &lt;/li&gt; &lt;li&gt; &lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/nav&gt; &lt;/div&gt;
-			</pre>
+			&lt;div id=&quot;header&quot;&gt;
+			   &lt;nav id=&quot;nav&quot;&gt;
+			       &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+			           &lt;li&gt;
+			             &lt;a href=&quot;#home&quot;&gt;Home&lt;/a&gt;
+			           &lt;/li&gt;
+			           &lt;li&gt;
+			             &lt;a href=&quot;#about&quot;&gt;About&lt;/a&gt;
+			           &lt;/li&gt;
+			           &lt;li&gt;
+			             &lt;a href=&quot;#services&quot;&gt;Services&lt;/a&gt;
+			           &lt;/li&gt;
+			           &lt;li&gt;
+			             &lt;a href=&quot;#contact&quot;&gt;Contact&lt;/a&gt;
+			           &lt;/li&gt;
+			       &lt;/ul&gt;
+			   &lt;/nav&gt;
+			&lt;/div&gt;</pre>
 			<p>
 				The most important part here are the <code>href</code> attributes of the anchor tags. They should point to corresponding <code>div</code> section with the same <code>id</code> attribute.<br>
 				 Thanks to this every navigation link will be highlighted as soon as corresponding section hits the bottom of the navigation wrapper.<br>
@@ -127,18 +143,17 @@
 			</p>
 			<pre class="brush: html">
 				<div id="home" class="scrollto">
-					<!-- Your content goes here -->
+					</ Your content goes here >
 				</div>
 				<div id="about" class="scrollto">
-					<!-- Your content goes here -->
+					</ Your content goes here >
 				</div>
 				<div id="services" class="scrollto">
-					<!-- Your content goes here -->
+					</ Your content goes here >
 				</div>
 				<div id="contact" class="scrollto">
-					<!-- Your content goes here -->
-				</div>
-			</pre>
+					</ Your content goes here >
+				</div></pre>
 		</div>
 		<!-- End Wrap -->
 	</div>
@@ -146,13 +161,20 @@
 	<!-- START CSS -->
 	<div id="CSS" class="scrollto">
 		<div class="wrap">
-			<h2>4. CSS</h2>
+			<h2 class="wow fadeInRight">4. CSS</h2>
 			<p>
 				The styling of the navigation wrapper, <code>ul</code> and <code>li</code> elements is really up to you. In fact there is really only one style needed in your CSS:
 			</p>
 			<pre class="brush: css">
-				 .active { color: #fff !important; text-decoration: underline !important; -webkit-transform: translate3d(0, 0, 0); -moz-transform: translate3d(0, 0, 0); -o-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-			</pre>
+			.active {
+			    color: #fff !important;
+			    text-decoration: underline !important;
+			    -webkit-transform: translate3d(0, 0, 0);
+			    -moz-transform: translate3d(0, 0, 0);
+			    -o-transform: translate3d(0, 0, 0);
+			    -ms-transform: translate3d(0, 0, 0);
+			    transform: translate3d(0, 0, 0);
+			}</pre>
 			<p>
 				This ensures the highlighting of the active class. <code>transform: translate3d(0, 0, 0)</code> is a hack that triggers hardware acceleration during CSS3 animations.
 			</p>
@@ -163,19 +185,36 @@
 	<!-- START jQuery -->
 	<div id="jquery" class="scrollto">
 		<div class="wrap">
-			<h2>5. jQuery</h2>
+			<h2 class="wow fadeInDown">5. jQuery</h2>
 			<p>
 				Call stickyNavbar function on the navigation wrapper, <code>nav</code> tag or <code>ul</code> tag either without options object:
 			</p>
 			<pre class="brush: js">
-				 $(function () { $('.header').stickyNavbar(); });
-			</pre>
+				 $(function () {
+				 	$('.header').stickyNavbar();
+				 });</pre>
 			<p>
 				or with the options object:
 			</p>
 			<pre class="brush: js">
-				 $(function () { $('.header').stickyNavbar({ activeClass: "active", // Class to be added to highlight nav elements sectionSelector: "scrollto", // Class of the section that is interconnected with nav links navOffset: 0, // Offset from the default position of this() (nav container) animDuration: 250, // Duration of jQuery animation startAt: 0, // Stick the menu at XXXpx from the top of the this() (nav container) easing: "linear", // Easing type if jqueryEffects = true, use jQuery Easing plugin to extend easing types - gsgd.co.uk/sandbox/jquery/easing animateCSS: true, // AnimateCSS effect on/off animateCSSRepeat: false, // Repeat animation everytime user scrolls bottomAnimation: false, // CSS animation on/off in case we hit the bottom of the page cssAnimation: "fadeInDown", // AnimateCSS class that will be added to selector jqueryEffects: false, // jQuery animation on/off jqueryAnim: "slideDown", // jQuery animation type: fadeIn, show or slideDown selector: "a" // Selector to which activeClass will be added, either "a" or "li" }); });
-			</pre>
+			$(function () {
+			  $('.header').stickyNavbar({
+			      activeClass: "active",       // Class to be added to highlight nav elements
+			      sectionSelector: "scrollto", // Class of the section that is interconnected with nav links
+			      navOffset: 0,                // Offset from the default position of this() (nav container)
+			      animDuration: 250,           // Duration of jQuery animation
+			      startAt: 0,                  // Stick the menu at XXXpx from the top of the this() (nav container)
+			      easing: "linear",            // Easing type if jqueryEffects = true, use jQuery Easing plugin to extend easing types - gsgd.co.uk/sandbox/jquery/easing
+			      animateCSS: true,           // AnimateCSS effect on/off
+			      animateCSSRepeat: false,      // Repeat animation everytime user scrolls
+			      bottomAnimation: false,      // CSS animation on/off in case we hit the bottom of the page
+			      cssAnimation: "fadeInDown",      // AnimateCSS class that will be added to selector
+			      jqueryEffects: false,        // jQuery animation on/off
+			      jqueryAnim: "slideDown",     // jQuery animation type: fadeIn, show or slideDown
+			      selector: "a",                // Selector to which activeClass will be added, either "a" or "li"
+			      mobile: false // If false nav will not stick under 496px width of window
+			  });
+			});</pre>
 		</div>
 		<!-- End Wrap -->
 	</div>
@@ -183,7 +222,7 @@
 	<!-- START Options -->
 	<div id="options" class="scrollto">
 		<div class="wrap">
-			<h2>6. Default Options</h2>
+			<h2 class="wow fadeInLeft">6. Default Options</h2>
 			<h3>activeClass: "active"</h3>
 			<p>
 				Class to be added to highlight nav elements
@@ -236,14 +275,29 @@
 			<p>
 				Selector to which activeClass will be added, either <code>a</code> or <code>li</code>
 			</p>
+			<h3>mobile: false</h3>
+			<p>
+				If set to <code>false</code> <code>this()</code> will not stick under 480px width of window. This is due to usability on smaller mobile screen sizes.
+			</p>
 		</div>
 		<!-- End Wrap -->
 	</div>
 	<!-- End #jQuery -->
-	<!-- START CONTACT -->
+	<!-- START EXAMPLES -->
+	<div id="examples" class="scrollto">
+		<div class="wrap">
+			<h2 class="wow fadeInDown">7. Examples</h2>
+			<p class="align-center">
+				If you want to try tinkering with options please follow the link on <a href="http://jsbin.com/wuluj/2/edit">jsbin.com</a>.
+			</p>
+		</div>
+		<!-- End Wrap -->
+	</div>
+	<!-- End Credits -->
+	<!-- START CREDITS -->
 	<div id="credits" class="scrollto">
 		<div class="wrap">
-			<h2>7. Credits</h2>
+			<h2 class="wow fadeInDown">8. Credits</h2>
 			<p class="align-center">
 				<a target="_blank" href="http://api.jquery.com/"><i class="fa fa-heart"></i>jQuery</a><br>
 				<a target="_blank" href="http://daneden.github.io/animate.css/">Animate.CSS</a><br>
@@ -252,10 +306,10 @@
 		</div>
 		<!-- End Wrap -->
 	</div>
-	<!-- End Contact -->
+	<!-- End Credits -->
 	<!-- START CONTACT -->
 	<div id="contact" class="scrollto">
-		<div class="wrap">
+		<div class="wrap wow fadeInUp">
 			<h2>Contact</h2>
 			<p class="align-center">
 				Copyright &copy; 2014 Jozef Butko<br>
@@ -270,7 +324,6 @@
 </div>
 <!-- End content-wrapper -->
 <!-- END CONTACT -->
-
 <!-- Scripts -->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>

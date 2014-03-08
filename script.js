@@ -12,10 +12,14 @@ $(function () {
     animateCSS: true,
     animateCSSRepeat: false,
     selector: "a",
-    jqueryAnim: "fadeInDown" // jQuery effects: fadeIn, show, slideDown
+    jqueryAnim: "fadeInDown", // jQuery effects: fadeIn, show, slideDown
+    mobile: false
   });
 });
 
-SyntaxHighlighter.config.bloggerMode = true;
+//SyntaxHighlighter.config.bloggerMode = true;
 SyntaxHighlighter.config.clipboardSwf = 'http://alexgorbatchev.com/pub/sh/current/scripts/clipboard.swf';
 SyntaxHighlighter.all();
+
+// wow animate init
+new WOW().init();

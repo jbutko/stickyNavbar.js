@@ -40,7 +40,8 @@
       cssAnimation: "fadeInDown", // AnimateCSS class that will be added to selector
       jqueryEffects: false, // jQuery animation on/off
       jqueryAnim: "slideDown", // jQuery animation type: fadeIn, show or slideDown
-      selector: "a" // Selector to which activeClass will be added, either "a" or "li"
+      selector: "a", // Selector to which activeClass will be added, either "a" or "li"
+      mobile: false // If false nav will not stick under 496px width of window
     }, prop),
       section = $('.' + options.sectionSelector);
 
@@ -70,7 +71,8 @@
 
         /* Cache window and window position from the top */
         var win = $(window),
-          windowPosition = win.scrollTop();
+          windowPosition = win.scrollTop(),
+          windowWidth = win.outerWidth(true);
 
         /* Everytime we scroll remove the activeClass. Later on we add it if needed. */
         menuItems.removeClass(options.activeClass);
@@ -100,6 +102,10 @@
           }).stop().animate({
             top: options.navOffset
           }, options.animDuration, options.easing);
+
+          if (!options.mobile && windowWidth < 480) {
+            $self.css('position', $selfPosition);
+          }
 
           /* If jQuery effects are turned on */
           if (options.jqueryEffects) {
