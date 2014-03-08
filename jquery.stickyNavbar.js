@@ -1,23 +1,24 @@
 /*!
  * stickyNavbar.js v1.0.0
- * https://github.com/jbutko/stickyNavbar
+ * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
  * Developed and maintenained under MIT licence by Jozef Butko - www.jozefbutko.com
- *
- * Original jquery-browser code Copyright 2005, 2013 jQuery Foundation, Inc. and other contributors
+ * http://www.opensource.org/licenses/MIT
+ 
+ * Original jquery-browser code Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
  * http://jquery.org/license
  *
- * Licensed under the MIT license:
- * http://www.opensource.org/licenses/MIT
- *
  * CREDITS:
- * Daniel Eden for Animate.CSS
+ * Daniel Eden for Animate.CSS:
  * http://daneden.github.io/animate.css/
+ * jQuery easing plugin:
+ * http://gsgd.co.uk/sandbox/jquery/easing/
  *
  * COPYRIGHT (C) 2014 Jozef Butko
  * https://github.com/jbutko
  */
+ 
 /* The semi-colon before function invocation is a safety net against concatenated
    scripts and/or other plugins which may not be closed properly. */
 ;(function ($, window, document) {
