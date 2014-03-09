@@ -22,8 +22,8 @@
     }
   ],
   "homepage": "https://github.com/jbutko/stickyNavbar.js",
-  "docs": "https://github.com/jbutko/stickyNavbar.js",
-  "demo": "https://github.com/jbutko/stickyNavbar.js",
+  "docs": "http://www.jozefbutko.com/stickyNavbar/",
+  "demo": "http://www.jozefbutko.com/stickyNavbar/",
   "dependencies": {
     "jquery": "*"
   }
