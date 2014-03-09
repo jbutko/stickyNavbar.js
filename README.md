@@ -1,6 +1,4 @@
 #stickyNavbar.js
-*Just-add-water CSS animation*
-
 stickyNavbar.js: Fancy sticky navigation jQuery plugin with smart anchor links highlighting
 
 ##1. Setup
