@@ -104,12 +104,12 @@ $(function () {
 http://www.jozefbutko.com/stickyNavbar/ or if you want to play with options: http://jsbin.com/wuluj/2/edit
 
 ##6. Credits
-[jQuery](http://api.jquery.com/)
-[Animate.CSS](http://daneden.github.io/animate.css/)
+[jQuery](http://api.jquery.com/)<br>
+[Animate.CSS](http://daneden.github.io/animate.css/)<br>
 [jQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ##Contact
 Copyright (C) 2014 Jozef Butko
-[www.jozefbutko.com](http://www.jozefbutko.com/)
-[www.github.com/jbutko](http://www.github.com/jbutko)
+[www.jozefbutko.com](http://www.jozefbutko.com/)<br>
+[www.github.com/jbutko](http://www.github.com/jbutko)<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
