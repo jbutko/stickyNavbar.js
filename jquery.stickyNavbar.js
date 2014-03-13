@@ -124,9 +124,9 @@
             }
 
             /* Restart the animation */
-            setTimeout(function () {
-              $self.stop().addClass(options.cssAnimation + ' animated');
-            }, 1);
+            $self.addClass(options.cssAnimation + ' animated').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(e) {
+              $self.removeClass(options.cssAnimation + ' animated');
+            });
 
             /* Else if jQuery and animateCSS are turned off */
           } else {
@@ -160,9 +160,9 @@
             $self.removeClass(options.cssAnimation + ' animated');
 
             /* Restart the animation */
-            setTimeout(function () {
-              $self.addClass(options.cssAnimation + ' animated');
-            }, 1);
+            $self.addClass(options.cssAnimation + ' animated').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(e) {
+              $self.removeClass(options.cssAnimation + ' animated');
+            });
           }
         }
 
