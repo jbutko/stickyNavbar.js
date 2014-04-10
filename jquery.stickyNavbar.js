@@ -1,5 +1,5 @@
 /*!
- * stickyNavbar.js v1.0.3
+ * stickyNavbar.js v1.0.4
  * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
