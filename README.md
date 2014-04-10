@@ -17,7 +17,7 @@ Include reference to jQuery library, jQuery easing plugin (optional), animate.CS
 
 Navigation:
 ```html
-<div id="header">
+<div id="header" class="header">
    <nav id="nav">
        <ul class="nav navbar-nav">
            <li>
