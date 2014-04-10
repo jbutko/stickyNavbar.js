@@ -113,23 +113,23 @@ Copyright (C) 2014 Jozef Butko<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
 ##Changelog
-#1.0.4
+###1.0.4
 Fix of the overlapped content by nav container after first click
 Version number fix to 1.0.4
 10.04.2013
 
-#1.0.3
+###1.0.3
 Flickering of CSS animation fix
 13.03.2014
 
-#1.0.2
+###1.0.2
 manifest update
 09.03.2014
 
-#1.0.1
+###1.0.1
 stickyNavbar.js.jquery.json update
 09.03.2014
 
-#1.0.0
+###1.0.0
 stickyNavbar.js.jquery.json update
 09.03.2014
