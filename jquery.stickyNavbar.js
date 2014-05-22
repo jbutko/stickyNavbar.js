@@ -1,5 +1,5 @@
-/*!
- * stickyNavbar.js v1.0.4
+/*
+ * stickyNavbar.js v1.0.5
  * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
@@ -64,12 +64,16 @@
             /* If we first first time or we get back to home substract thisHeight 2 times */
             var clicks = 0;
 
+
+            /* Smooth scrolling logic */
             menuItems.click(function (e) {
                 /* Get index of clicked nav link */
                 var index = menuItems.index(this),
                     section = $(this).attr("href"); // Get href attr of clicked nav link
+
                 /* On every nav link click increment counter */
                 ++clicks;
+
                 /* If user click on first link (home) reset counter */
                 if (index === "0") {
                     clicks = 0;
@@ -77,23 +81,39 @@
 
                 /* Prevent default click behaviour */
                 e.preventDefault();
+                
+                /* v1.0.5: Inaccurate scrolling fix */
+                /* If it is first click and we are left 1st section and want to go downward then add 'this' height just once */
+                if (clicks === 1 && ($self.offset().top > $selfScrollTop)) {
 
+                    $("html, body").stop().animate({
+                        scrollTop: $(section).offset().top - options.navOffset - thisHeight + 2 + 'px'
+                    });
+                
                 /* v1.0.3: Overlapping fix */
                 /* If it is first click after page load or we are at the top of the page or user return back on home: Then add 'this' height 2 times to fix overlapping */
-                if (clicks === 1 || $self.offset().top === $selfScrollTop || index === 0) {
+                } else if (clicks === 1 || $self.offset().top === $selfScrollTop || index === 0) {
 
                     $("html, body").stop().animate({
                         scrollTop: $(section).offset().top - options.navOffset - 2 * thisHeight + 2 + 'px'
                     });
 
-                    /* Else add 'this'  height just once */
+                /* v1.0.5: Inaccurate scrolling fix */
+                /* If it is second click and we are scrolling upwards then add 'this' height just once */
+                } else if (clicks === 2 && ($self.offset().top < $selfScrollTop)) {
+
+                    $("html, body").stop().animate({
+                        scrollTop: $(section).offset().top - options.navOffset + 2 + 'px'
+                    });
+
+                /* Else add 'this' height just once */
                 } else {
 
                     $("html, body").stop().animate({
                         scrollTop: $(section).offset().top - options.navOffset - thisHeight + 2 + 'px'
                     });
 
-                }
+                } // Smooth scrolling logic End
 
             }); // menuItems.click(function(e) END
 
@@ -150,13 +170,19 @@
 
                         /* If animateCSSRepeat == true animation will repeat on each scroll  */
                         if (options.animateCSSRepeat && options.bottomAnimation) {
-                            $self.removeClass(options.cssAnimation + ' animated');
-                        }
 
-                        /* Restart the animation */
-                        $self.addClass(options.cssAnimation + ' animated').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function (e) {
-                            $self.removeClass(options.cssAnimation + ' animated');
-                        });
+                            /* v1.0.5: animateCSSRepeat Fix */
+                            /* Restart the animation */
+                            $self.addClass(options.cssAnimation + ' animated').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function (e) {
+                                $self.removeClass(options.cssAnimation + ' animated');
+                            });
+
+                        /* v1.0.5: animateCSSRepeat Fix */
+                        } else {
+
+                            /* Restart the animation just once */
+                            $self.addClass(options.cssAnimation + ' animated').one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd');
+                        }
 
                         /* Else if jQuery and animateCSS are turned off */
                     } else {
