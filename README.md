@@ -113,6 +113,11 @@ Copyright (C) 2014 Jozef Butko<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
 ##Changelog
+###1.0.5
+animateCSSRepeat Fix<br>
+Inaccurate scrolling fix<br>
+22.05.2014
+
 ###1.0.4
 Fix of the overlapped content by nav container after first click<br>
 Version number fix to 1.0.4<br>
