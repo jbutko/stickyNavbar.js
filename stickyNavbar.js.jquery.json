@@ -9,7 +9,7 @@
     "navigation",
     "sticky"
   ],
-  "version": "1.0.5",
+  "version": "1.1.0",
   "author": {
     "name": "Jozef Butko",
     "email": "jbutko@gmail.com",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/jbutko/stickyNavbar.js",
   "docs": "http://www.jozefbutko.com/stickyNavbar/",
   "demo": "http://www.jozefbutko.com/stickyNavbar/",
+  "bugs": "https://github.com/jbutko/stickyNavbar.js/issues?state=open",
   "dependencies": {
     "jquery": "*"
   }
