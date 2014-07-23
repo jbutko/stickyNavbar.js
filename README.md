@@ -117,6 +117,7 @@ Copyright (C) 2014 Jozef Butko<br>
 ##Changelog
 ###1.1.1
 - just a readme file update
+
 ###1.1.0
 - stickyMode/unstickyMode class added
 - custom mobileWidth for turning off stickyNavbar
