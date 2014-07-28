@@ -10,7 +10,7 @@ Include reference to jQuery library, jQuery easing plugin (optional), animate.CS
 <!-- all these references goes before the closing body tag-->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="//cdn.jsdelivr.net/stickynavbar.js/1.0.5/jquery.stickyNavbar.min.js"></script>
+<script src="//cdn.jsdelivr.net/stickynavbar.js/1.1.1/jquery.stickyNavbar.min.js"></script>
 ```
 
 ##2. HTML Markup
