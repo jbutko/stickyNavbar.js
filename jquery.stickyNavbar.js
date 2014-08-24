@@ -70,6 +70,9 @@
 
             /* Smooth scrolling logic */
             menuItems.click(function (e) {
+               if ($(this).attr("href").substring(0, 4) === 'http') {
+                  return true;
+               }
                 /* Get index of clicked nav link */
                 var index = menuItems.index(this),
                     section = $(this).attr("href"); // Get href attr of clicked nav link
