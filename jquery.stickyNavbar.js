@@ -70,9 +70,13 @@
 
             /* Smooth scrolling logic */
             menuItems.click(function (e) {
+               var href = $(this).attr("href");
+               if (href.substring(0, 4) === 'http' || href.substring(0, 7) === 'mailto:') {
+                  return true;
+               }
                 /* Get index of clicked nav link */
                 var index = menuItems.index(this),
-                    section = $(this).attr("href"); // Get href attr of clicked nav link
+                    section = href; // Get href attr of clicked nav link
 
                 /* On every nav link click increment counter */
                 ++clicks;
