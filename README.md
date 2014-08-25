@@ -115,8 +115,13 @@ Copyright (C) 2014 Jozef Butko<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
 ##Changelog
+###1.1.2
+- ignore external links and just let them open fix - pull request #15 by Globegitter
+25/07/2014
+
 ###1.1.1
 - just a readme file update
+23/07/2014
 
 ###1.1.0
 - stickyMode/unstickyMode class added
@@ -127,6 +132,7 @@ Copyright (C) 2014 Jozef Butko<br>
 - bottomAnimation option removed (unstable behaviour)
 - navOffset option removed (unstable behaviour)
 - credits for feature requests/points: @Phyxion, @oniric85, @coolboy4598
+23/07/2014
 
 ###1.0.5
 - animateCSSRepeat Fix<br>

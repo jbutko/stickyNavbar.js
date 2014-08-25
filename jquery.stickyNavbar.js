@@ -1,5 +1,5 @@
 /*
- * stickyNavbar.js v1.1.1
+ * stickyNavbar.js v1.1.2
  * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
@@ -17,7 +17,7 @@
  *
  * COPYRIGHT (C) 2014 Jozef Butko
  * https://github.com/jbutko
- * LAST UPDATE: 23/07/2014
+ * LAST UPDATE: 25/08/2014
  *
  */
 /* The semi-colon before function invocation is a safety net against concatenated
@@ -69,11 +69,13 @@
             var clicks = 0;
 
             /* Smooth scrolling logic */
-            menuItems.click(function (e) {
-               var href = $(this).attr("href");
-               if (href.substring(0, 4) === 'http' || href.substring(0, 7) === 'mailto:') {
-                  return true;
-               }
+            menuItems.click(function(e) {
+                /* v1.1.2: Ignore external links and just let them open - pull request #15 by Globegitter */
+                var href = $(this).attr("href");
+                if (href.substring(0, 4) === 'http' || href.substring(0, 7) === 'mailto:') {
+                    return true;
+                }
+
                 /* Get index of clicked nav link */
                 var index = menuItems.index(this),
                     section = href; // Get href attr of clicked nav link
@@ -96,30 +98,42 @@
 
                     $("html, body").stop().animate({
                         scrollTop: $(section).offset().top - thisHeight + 2 + 'px'
-                    }, {duration: options.animDuration, easing: options.easing});
+                    }, {
+                        duration: options.animDuration,
+                        easing: options.easing
+                    });
 
-                /* v1.0.3: Overlapping fix */
-                /* If it is first click after page load or we are at the top of the page or user return back on home: Then add 'this' height 2 times to fix overlapping */
+                    /* v1.0.3: Overlapping fix */
+                    /* If it is first click after page load or we are at the top of the page or user return back on home: Then add 'this' height 2 times to fix overlapping */
                 } else if (clicks === 1 || $self.offset().top === $selfScrollTop || index === 0) {
 
                     $("html, body").stop().animate({
                         scrollTop: $(section).offset().top - 2 * thisHeight + 2 + 'px'
-                    }, {duration: options.animDuration, easing: options.easing});
+                    }, {
+                        duration: options.animDuration,
+                        easing: options.easing
+                    });
 
-                /* v1.0.5: Inaccurate scrolling fix */
-                /* If it is second click and we are scrolling upwards then add 'this' height just once */
+                    /* v1.0.5: Inaccurate scrolling fix */
+                    /* If it is second click and we are scrolling upwards then add 'this' height just once */
                 } else if (clicks === 2 && ($self.offset().top < $selfScrollTop)) {
 
                     $("html, body").stop().animate({
                         scrollTop: $(section).offset().top + 2 + 'px'
-                    }, {duration: options.animDuration, easing: options.easing});
+                    }, {
+                        duration: options.animDuration,
+                        easing: options.easing
+                    });
 
-                /* Else add 'this' height just once */
+                    /* Else add 'this' height just once */
                 } else {
 
                     $("html, body").stop().animate({
                         scrollTop: $(section).offset().top - thisHeight + 2 + 'px'
-                    }, {duration: options.animDuration, easing: options.easing});
+                    }, {
+                        duration: options.animDuration,
+                        easing: options.easing
+                    });
 
                 } // Smooth scrolling logic End
 
