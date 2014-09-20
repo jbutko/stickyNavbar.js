@@ -10,7 +10,7 @@ Include reference to jQuery library, jQuery easing plugin (optional), animate.CS
 <!-- all these references goes before the closing body tag-->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="//cdn.jsdelivr.net/stickynavbar.js/1.1.1/jquery.stickyNavbar.min.js"></script>
+<script src="//cdn.jsdelivr.net/stickynavbar.js/1.1.3/jquery.stickyNavbar.min.js"></script>
 ```
 
 ##2. HTML Markup
@@ -115,12 +115,16 @@ Copyright (C) 2014 Jozef Butko<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
 ##Changelog
+###1.1.3
+- scrolling bug fix<br>
+20/09/2014
+
 ###1.1.2
-- ignore external links and just let them open fix - pull request #15 by Globegitter
+- ignore external links and just let them open fix - pull request #15 by Globegitter<br>
 25/07/2014
 
 ###1.1.1
-- just a readme file update
+- just a readme file update<br>
 23/07/2014
 
 ###1.1.0
@@ -131,7 +135,7 @@ Copyright (C) 2014 Jozef Butko<br>
 - added animation duration and easing for scrolling
 - bottomAnimation option removed (unstable behaviour)
 - navOffset option removed (unstable behaviour)
-- credits for feature requests/points: @Phyxion, @oniric85, @coolboy4598
+- credits for feature requests/points: @Phyxion, @oniric85, @coolboy4598<br>
 23/07/2014
 
 ###1.0.5

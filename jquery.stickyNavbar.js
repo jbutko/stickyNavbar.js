@@ -1,5 +1,5 @@
 /*
- * stickyNavbar.js v1.1.2
+ * stickyNavbar.js v1.1.3
  * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
@@ -17,7 +17,7 @@
  *
  * COPYRIGHT (C) 2014 Jozef Butko
  * https://github.com/jbutko
- * LAST UPDATE: 25/08/2014
+ * LAST UPDATE: 20/09/2014
  *
  */
 /* The semi-colon before function invocation is a safety net against concatenated
@@ -57,16 +57,19 @@
             var $self = $(this),
                 $selfPosition = $self.css("position"), // Initial position of this,
                 $selfZindex = $self.css("zIndex"), // Z-index of this
-                $selfScrollTop = $self.offset().top, // scrollTop position of this
+                thisHeight = $self.outerHeight(true), // Height of navigation wrapper
+                $selfScrollTop = $self.offset().top - thisHeight, // scrollTop position of this
                 $topOffset = $self.css("top") === 'auto' ? 0 : $self.css("top"), // Top property of this: if not set = 0
                 menuItems = options.selector === "a" ? $self.find('li a') : $self.find('li'), // Navigation lists or links
                 menuItemsHref = $self.find('li a[href*=#]'), // href attributes of navigation links
-                thisHeight = $self.outerHeight(true); // Height of navigation wrapper
+                windowPosition = $(window).scrollTop();
+
 
             /* Smooth scrolling to the desired section: get clicked href attribute, measure offset from top and then animate  */
             /* v1.0.3: Fix for overlapping content by navigation */
             /* If we first first time or we get back to home substract thisHeight 2 times */
             var clicks = 0;
+
 
             /* Smooth scrolling logic */
             menuItems.click(function(e) {
@@ -75,6 +78,8 @@
                 if (href.substring(0, 4) === 'http' || href.substring(0, 7) === 'mailto:') {
                     return true;
                 }
+
+                windowPosition = $(window).scrollTop();
 
                 /* Get index of clicked nav link */
                 var index = menuItems.index(this),
@@ -97,7 +102,7 @@
                 if (clicks === 1 && ($self.offset().top > $selfScrollTop)) {
 
                     $("html, body").stop().animate({
-                        scrollTop: $(section).offset().top - thisHeight + 2 + 'px'
+                        scrollTop: $(section).offset().top - 2 * thisHeight + 2 + 'px'
                     }, {
                         duration: options.animDuration,
                         easing: options.easing
@@ -125,7 +130,16 @@
                         easing: options.easing
                     });
 
-                    /* Else add 'this' height just once */
+                    /* v1.1.3 - scrolling fix */
+                } else if ($selfScrollTop > windowPosition) {
+
+                    $("html, body").stop().animate({
+                        scrollTop: $(section).offset().top - 2 * thisHeight + 2 + 'px'
+                    }, {
+                        duration: options.animDuration,
+                        easing: options.easing
+                    });
+
                 } else {
 
                     $("html, body").stop().animate({
@@ -135,7 +149,7 @@
                         easing: options.easing
                     });
 
-                } // Smooth scrolling logic End
+                }// Smooth scrolling logic End
 
             }); // menuItems.click(function(e) END
 
@@ -172,9 +186,8 @@
                     }
                 });
 
-
                 /* 1.) As soon as we start scrolling */
-                if (windowPosition >= $selfScrollTop + options.startAt) {
+                if (windowPosition >= $selfScrollTop + options.startAt - thisHeight) {
 
                     /* v.1.1.0: sticky/unsticky class */
                     /* Add 'sticky' class to this as soon as 'this' is in sticky mode */
@@ -240,7 +253,8 @@
 
                 /* 3.) As soon as we get back to the top of the page */
                 /* If top of the window is over this() (nav container) */
-                if (windowPosition <= $selfScrollTop) {
+                /* v1.1.3 - scrolling fix */
+                if (windowPosition <= $selfScrollTop - 2) {
                     $self.removeClass(options.cssAnimation + ' animated');
 
                     /* If jQuery effects are turned on */
