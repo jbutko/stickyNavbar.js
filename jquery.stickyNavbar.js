@@ -74,7 +74,11 @@
             /* Smooth scrolling logic */
             menuItems.click(function(e) {
                 /* v1.1.2: Ignore external links and just let them open - pull request #15 by Globegitter */
-                var href = $(this).attr("href");
+                if(options.selector === "li"){
+                    var href = $(this).children('a').attr('href');
+                } else {
+                    var href = $(this).attr("href");
+                }
                 if (href.substring(0, 4) === 'http' || href.substring(0, 7) === 'mailto:') {
                     return true;
                 }
