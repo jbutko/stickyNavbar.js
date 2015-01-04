@@ -101,7 +101,7 @@ $(function () {
 ```
 
 ##5. Demo
-http://www.jozefbutko.com/stickyNavbar/ or if you want to play with options: http://jsbin.com/wuluj/4/edit
+http://www.jozefbutko.com/stickynavbar/ or if you want to play with options: http://jsbin.com/wuluj/4/edit
 
 ##6. Credits
 [jQuery](http://api.jquery.com/)<br>
