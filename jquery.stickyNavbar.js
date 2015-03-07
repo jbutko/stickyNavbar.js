@@ -46,7 +46,8 @@
             mobileWidth: 480, // The viewport width (without scrollbar) under which stickyNavbar will not be applied (due user usability on mobile)
             zindex: 9999, // The zindex value to apply to the element: default 9999, other option is "auto"
             stickyModeClass: "sticky", // Class that will be applied to 'this' in sticky mode
-            unstickyModeClass: "unsticky" // Class that will be applied to 'this' in non-sticky mode
+            unstickyModeClass: "unsticky", // Class that will be applied to 'this' in non-sticky mode
+            stickyModeFunction: null
         }, prop),
             section = $('.' + options.sectionSelector);
 
@@ -187,7 +188,14 @@
                 });
 
                 /* 1.) As soon as we start scrolling */
-                if (windowPosition >= $selfScrollTop + options.startAt - thisHeight) {
+                var stickyModeFunction = options.stickyModeFunction
+                if (!stickyModeFunction) {
+                    stickyModeFunction = function () {
+                        return windowPosition >= $selfScrollTop + options.startAt - thisHeight;
+                    }
+                }
+
+                if (stickyModeFunction()) {
 
                     /* v.1.1.0: sticky/unsticky class */
                     /* Add 'sticky' class to this as soon as 'this' is in sticky mode */
