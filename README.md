@@ -95,7 +95,9 @@ $(function () {
 		mobileWidth: 480, // The viewport width (without scrollbar) under which stickyNavbar will not be applied (due user usability on mobile)
 		zindex: 9999, // The zindex value to apply to the element: default 9999, other option is "auto"
 		stickyModeClass: "sticky", // Class that will be applied to 'this' in sticky mode
-		unstickyModeClass: "unsticky" // Class that will be applied to 'this' in non-sticky mode
+		unstickyModeClass: "unsticky", // Class that will be applied to 'this' in non-sticky mode    stickyModeFunction: function () {
+		     return true // custom check enter sticky mode function
+		}
 	});
 });
 ```
