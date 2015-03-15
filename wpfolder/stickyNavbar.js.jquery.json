@@ -1,0 +1,31 @@
+{
+  "name": "stickyNavbar.js",
+  "title": "stickyNavbar.js",
+  "description": "Fancy sticky navigation jQuery plugin with smart anchor links highlighting",
+  "keywords": [
+    "stickyNavbar",
+    "jQuery",
+    "nav",
+    "navigation",
+    "sticky"
+  ],
+  "version": "1.1.3",
+  "author": {
+    "name": "Jozef Butko",
+    "email": "jbutko@gmail.com",
+    "url": "http://www.jozefbutko.com/resume"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
+    }
+  ],
+  "homepage": "https://github.com/jbutko/stickyNavbar.js",
+  "docs": "http://www.jozefbutko.com/stickyNavbar/",
+  "demo": "http://www.jozefbutko.com/stickyNavbar/",
+  "bugs": "https://github.com/jbutko/stickyNavbar.js/issues?state=open",
+  "dependencies": {
+    "jquery": "*"
+  }
+}
