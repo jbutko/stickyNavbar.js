@@ -98,9 +98,11 @@
                     sectionOffsets[sections[i].id] = sections[i].offsetTop;
                 }
 
+                var toScroll = $self.hasClass('unsticky') ? sectionOffsets[currentHref] - 2 * thisHeight + 2 + 'px' : sectionOffsets[currentHref] - thisHeight + 2 + 'px';
+
                 // on nav click navigate to selected section
                 $('html, body').stop().animate({
-                    scrollTop: sectionOffsets[currentHref] - thisHeight + 2 + 'px'
+                    scrollTop: toScroll
                 }, {
                     duration: options.animDuration,
                     easing: options.easing
@@ -130,7 +132,6 @@
 
                 // add activeClass to the div that is passing the top of the window
                 sections.each(function() {
-                    console.log($(this));
                     var top = $(this).offset().top - thisHeight,
                         bottom = $(this).outerHeight(true) + top;
 
@@ -144,7 +145,7 @@
                 });
 
                 /* 1.) As soon as we start scrolling */
-                if (windowPosition >= $selfScrollTop + options.startAt - thisHeight) {
+                if (windowPosition >= $selfScrollTop + options.startAt) {
 
                     // add 'sticky' class to this as soon as 'this' is in sticky mode
                     $self.removeClass(options.unstickyModeClass).addClass(' ' + options.stickyModeClass);
@@ -251,6 +252,7 @@
             $(window).scroll(mainFunc); // scroll fn end
             $(window).ready(mainFunc);
             $(window).resize(mainFunc);
+            $(window).load(mainFunc);
 
         }); // return this.each end
     }; // $.fn.stickyNavbar end
