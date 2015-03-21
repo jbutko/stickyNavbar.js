@@ -107,8 +107,6 @@
                     duration: options.animDuration,
                     easing: options.easing
                 });
-
-
             });
 
 
