@@ -1,8 +1,8 @@
 {
-  "name": "stickyNavbar",
-  "version": "1.0.0",
-  "description": "",
-  "main": "Gruntfile.js",
+  "name": "stickyNavbar.js",
+  "version": "1.2.0",
+  "description": "Fancy sticky navigation jQuery plugin with smart anchor links highlighting",
+  "main": "jquery.stickyNavbar.js",
   "dependencies": {
     "browser-sync": "^1.9.1",
     "del": "^1.1.1",
@@ -37,17 +37,33 @@
     "serve-static": "^1.9.2",
     "gulp-util": "^3.0.4",
     "tiny-lr": "^0.1.5",
-    "watch": "^0.13.0"
-  },
-  "devDependencies": {
+    "watch": "^0.13.0",
     "browser-sync": "^1.9.1",
     "gulp": "^3.8.11",
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.4"
   },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbutko/stickyNavbar.js.git"
+  },
+  "keywords": [
+    "stickyNavbar",
+    "navigation",
+    "sticky",
+    "nav",
+    "jQuery"
+  ],
+  "author": "Jozef Butko",
+  "docs": "http://www.jozefbutko.com/stickyNavbar/",
+  "demo": "http://www.jozefbutko.com/stickyNavbar/",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbutko/stickyNavbar.js/issues"
+  },
+  "homepage": "https://github.com/jbutko/stickyNavbar.js"
 }
