@@ -115,6 +115,10 @@ Copyright (C) 2014 Jozef Butko<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
 ## Changelog
+### 1.2.1
+- added npm package.json<br>
+24/03/2015
+
 ### 1.2.0
 - new scrolling logic<br>
 - fix: conditional checking if the selector option is an 'li' then get the child's href attribute - pull request #21 by @dbrw<br>
