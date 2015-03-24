@@ -4,6 +4,9 @@
   "description": "Fancy sticky navigation jQuery plugin with smart anchor links highlighting",
   "main": "jquery.stickyNavbar.js",
   "dependencies": {
+    "jquery": "^1.10.2"
+  },
+  "devDependencies": {
     "browser-sync": "^1.9.1",
     "del": "^1.1.1",
     "connect": "^3.3.4",
@@ -42,8 +45,7 @@
     "gulp": "^3.8.11",
     "gulp-uglify": "^1.1.0",
     "gulp-util": "^3.0.4"
-  },
-  "devDependencies": {},
+    },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
