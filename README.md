@@ -1,7 +1,7 @@
-#stickyNavbar.js
+# stickyNavbar.js
 stickyNavbar.js: Fancy sticky navigation jQuery plugin with smart anchor links highlighting
 
-##1. Setup
+## 1. Setup
 Include reference to jQuery library, jQuery easing plugin (optional), animate.CSS (optional, not working in < IE9) and stickyNavbar itself at the bottom of the page before the closing `body` tag:
 
 ```html
@@ -13,7 +13,7 @@ Include reference to jQuery library, jQuery easing plugin (optional), animate.CS
 <script src="//cdn.jsdelivr.net/stickynavbar.js/1.2.0/jquery.stickyNavbar.min.js"></script>
 ```
 
-##2. HTML Markup
+## 2. HTML Markup
 
 Navigation:
 ```html
@@ -53,7 +53,7 @@ Body markup:
 </div>
 ```
 
-##3. CSS:
+## 3. CSS:
 Add `active` class into your `style.css` and style it as you like, eg.:
 ```css
 .active {
@@ -68,7 +68,7 @@ Add `active` class into your `style.css` and style it as you like, eg.:
 ```
 *Note: You can change `active` class to anything you want and pass your own class into options object of stickyNavbar function *
 
-##4. jQuery:
+## 4. jQuery:
 Call stickyNavbar function on the navigation wrapper (`.header`), nav tag or ul tag either without options object:
 ```javascript
 $(function () {
@@ -100,39 +100,39 @@ $(function () {
 });
 ```
 
-##5. Demo
+## 5. Demo
 http://www.jozefbutko.com/stickynavbar/ or if you want to play with options: http://jsbin.com/wuluj/4/edit
 
-##6. Credits
+## 6. Credits
 [jQuery](http://api.jquery.com/)<br>
 [Animate.CSS](http://daneden.github.io/animate.css/)<br>
 [jQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/)
 
-##Contact
+## Contact
 Copyright (C) 2014 Jozef Butko<br>
 [www.jozefbutko.com](http://www.jozefbutko.com)<br>
 [www.github.com/jbutko](http://www.github.com/jbutko)<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
-##Changelog
-###1.2.0
+## Changelog
+### 1.2.0
 - new scrolling logic<br>
 - fix: conditional checking if the selector option is an 'li' then get the child's href attribute - pull request #21 by @dbrw<br>
 21/03/2015
 
-###1.1.3
+### 1.1.3
 - scrolling bug fix<br>
 20/09/2014
 
-###1.1.2
+### 1.1.2
 - ignore external links and just let them open fix - pull request #15 by Globegitter<br>
 25/07/2014
 
-###1.1.1
+### 1.1.1
 - just a readme file update<br>
 23/07/2014
 
-###1.1.0
+### 1.1.0
 - stickyMode/unstickyMode class added
 - custom mobileWidth for turning off stickyNavbar
 - window.outerWidth(true) changed to window.width() according to jQuery docs
@@ -143,28 +143,28 @@ Copyright (C) 2014 Jozef Butko<br>
 - credits for feature requests/points: @Phyxion, @oniric85, @coolboy4598<br>
 23/07/2014
 
-###1.0.5
+### 1.0.5
 - animateCSSRepeat Fix<br>
 - Inaccurate scrolling fix<br>
 22.05.2014
 
-###1.0.4
+### 1.0.4
 - Fix of the overlapped content by nav container after first click<br>
 - Version number fix to 1.0.4<br>
 10.04.2013
 
-###1.0.3
+### 1.0.3
 - Flickering of CSS animation fix<br>
 13.03.2014<br>
 
-###1.0.2
+### 1.0.2
 - Manifest update<br>
 09.03.2014
 
-###1.0.1
+### 1.0.1
 - stickyNavbar.js.jquery.json update<br>
 09.03.2014
 
-###1.0.0
+### 1.0.0
 - stickyNavbar.js.jquery.json update<br>
 09.03.2014
