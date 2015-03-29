@@ -98,7 +98,7 @@
           sectionOffsets[sections[i].id] = sections[i].offsetTop;
         }
 
-        var toScroll = $self.hasClass('unsticky') ? sectionOffsets[currentHref] - 2 * thisHeight + 2 + 'px' : sectionOffsets[currentHref] - thisHeight + 2 + 'px';
+        var toScroll = $self.hasClass(options.unstickyModeClass) ? sectionOffsets[currentHref] - 2 * thisHeight + 2 + 'px' : sectionOffsets[currentHref] - thisHeight + 2 + 'px';
 
         // on nav click navigate to selected section
         $('html, body').stop().animate({
