@@ -115,6 +115,10 @@ Copyright (C) 2014 Jozef Butko<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
 ## Changelog
+### 1.2.2
+- Improve highlighting of last menu item - pull request #24 by marspe<br>
+15/05/2015
+
 ### 1.2.1
 - added npm package.json<br>
 24/03/2015
