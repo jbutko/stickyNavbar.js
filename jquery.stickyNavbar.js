@@ -98,7 +98,7 @@
           sectionOffsets[sections[i].id] = sections[i].offsetTop;
         }
 
-        var toScroll = $self.hasClass('unsticky') ? sectionOffsets[currentHref] - 2 * thisHeight + 2 + 'px' : sectionOffsets[currentHref] - thisHeight + 2 + 'px';
+        var toScroll = $self.hasClass(options.unstickyModeClass) ? sectionOffsets[currentHref] - 2 * thisHeight + 2 + 'px' : sectionOffsets[currentHref] - thisHeight + 2 + 'px';
 
         // on nav click navigate to selected section
         $('html, body').stop().animate({
@@ -192,9 +192,11 @@
           }).removeClass(options.stickyModeClass).addClass(' ' + options.unstickyModeClass);
         }
 
-
+        // grab bottom position of last section
+        var lastSection = sections.last(),
+            lastSectionBottom = lastSection.offset().top + lastSection.outerHeight(true);
         /* 2.) As soon as we hit the bottom of the page */
-        if (win.scrollTop() + windowHeight >= $(document).height()) {
+        if (win.scrollTop() + windowHeight >= $(document).height() && windowPosition <= lastSectionBottom) {
 
           // remove activeClass from menuItem before the last and add activeClass to the lastests one
           menuItems.removeClass(options.activeClass).last().addClass(options.activeClass);
