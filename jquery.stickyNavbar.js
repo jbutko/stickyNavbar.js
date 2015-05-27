@@ -65,9 +65,6 @@
       /* Smooth scrolling logic */
       menuItems.click(function(e) {
 
-        // prevent default click behaviour
-        e.preventDefault();
-
         // get href attr
         var href,
           currentHref,
@@ -83,9 +80,12 @@
         }
 
         // let normal links in navigation redirect to location
-        if (href.substring(0, 4) === 'http' || (href.substring(0, 5) === 'https' || href.substring(0, 7) === 'mailto:')) {
+        if (href.substring(0, 4) === 'http' || (href.substring(0, 5) === 'https' || href.substring(0, 7) === 'mailto:' || href.substring(0, 1) === '/')) {
           return true;
         }
+
+         // prevent default click behaviour
+        e.preventDefault();
 
         // href attr of clicked nav link
         currentHref = href.substr(1); // remove # character with substr
