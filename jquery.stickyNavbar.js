@@ -5,7 +5,7 @@
  *
  * Developed and maintenained under MIT licence by Jozef Butko - www.jozefbutko.com
  * http://www.opensource.org/licenses/MIT
-
+ 
  * Original jquery-browser code Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
  * http://jquery.org/license
  *
@@ -20,7 +20,8 @@
  * LAST UPDATE: 15/05/2015
  *
  */
-;(function($, window, document) {
+;
+(function($, window, document) {
 
   'use strict';
 
@@ -61,7 +62,6 @@
         menuItemsHref = $self.find('li a[href*=#]'), // href attributes of navigation links
         windowPosition = $(window).scrollTop();
 
-
       /* Smooth scrolling logic */
       menuItems.click(function(e) {
 
@@ -84,7 +84,7 @@
           return true;
         }
 
-         // prevent default click behaviour
+        // prevent default click behaviour
         e.preventDefault();
 
         // href attr of clicked nav link
@@ -187,14 +187,14 @@
 
           // add 'sticky' class to this as soon as 'this' is in sticky mode */
           $self.css({
-            'position': options.$selfPosition,
+            'position': $selfPosition,
             'zIndex': $selfZindex
           }).removeClass(options.stickyModeClass).addClass(' ' + options.unstickyModeClass);
         }
 
         // grab bottom position of last section
         var lastSection = sections.last(),
-            lastSectionBottom = lastSection.offset().top + lastSection.outerHeight(true);
+          lastSectionBottom = lastSection.offset().top + lastSection.outerHeight(true);
         /* 2.) As soon as we hit the bottom of the page */
         if (win.scrollTop() + windowHeight >= $(document).height() && windowPosition <= lastSectionBottom) {
 
@@ -205,7 +205,7 @@
 
         /* 3.) As soon as we get back to the top of the page */
         // if top of the window is over this() (nav container)
-        if (windowPosition <= $selfScrollTop - 2) {
+        if (windowPosition <= ($selfScrollTop + options.startAt) - 2) {
           $self.removeClass(options.cssAnimation + ' animated');
 
           // if jQuery effects are turned on
@@ -236,13 +236,12 @@
             if (windowPosition === 0) {
               menuItems.removeClass(options.activeClass);
             }
-
             // set initial position of this() and initial CSS top property
             $self.css({
               'position': $selfPosition,
-              'top': $topOffset
+              //'top': $topOffset
             }).stop().animate({
-              top: $topOffset
+              //top: $topOffset
             }, options.animDuration, options.easing);
           }
         } // ( windowPosition <= $selfScrollTop ) end
