@@ -1,11 +1,11 @@
 /*
- * stickyNavbar.js v1.2.2
+ * stickyNavbar.js v1.3.0
  * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
  * Developed and maintenained under MIT licence by Jozef Butko - www.jozefbutko.com
  * http://www.opensource.org/licenses/MIT
- 
+
  * Original jquery-browser code Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
  * http://jquery.org/license
  *
@@ -17,11 +17,10 @@
  *
  * COPYRIGHT (C) 2014 Jozef Butko
  * https://github.com/jbutko
- * LAST UPDATE: 15/05/2015
+ * LAST UPDATE: 06/06/2015
  *
  */
-;
-(function($, window, document) {
+;(function($, window, document) {
 
   'use strict';
 
@@ -55,24 +54,24 @@
 
       // cache variables
       var $self = $(this),
-        $selfPosition = $self.css('position'), // Initial position of this,
-        $selfZindex = $self.css('zIndex'), // Z-index of this
-        thisHeight = $self.outerHeight(true), // Height of navigation wrapper
-        $selfScrollTop = $self.offset().top - thisHeight, // scrollTop position of this
-        $topOffset = $self.css('top') === 'auto' ? 0 : $self.css('top'), // Top property of this: if not set = 0
-        menuItems = options.selector === 'a' ? $self.find('li a') : $self.find('li'), // Navigation lists or links
-        menuItemsHref = $self.find('li a[href*=#]'), // href attributes of navigation links
-        windowPosition = $(window).scrollTop();
+          $selfPosition = $self.css('position'), // Initial position of this,
+          $selfZindex = $self.css('zIndex'), // Z-index of this
+          thisHeight = $self.outerHeight(true), // Height of navigation wrapper
+          $selfScrollTop = $self.offset().top - thisHeight, // scrollTop position of this
+          $topOffset = $self.css('top') === 'auto' ? 0 : $self.css('top'), // Top property of this: if not set = 0
+          menuItems = options.selector === 'a' ? $self.find('li a') : $self.find('li'), // Navigation lists or links
+          menuItemsHref = $self.find('li a[href*=#]'), // href attributes of navigation links
+          windowPosition = $(window).scrollTop();
 
       /* Smooth scrolling logic */
       menuItems.click(function(e) {
 
         // get href attr
         var href,
-          currentHref,
-          i,
-          sectionOffsets,
-          sectionsLength;
+            currentHref,
+            i,
+            sectionOffsets,
+            sectionsLength;
 
         // cache href value
         if (options.selector === 'li') {
@@ -82,7 +81,8 @@
         }
 
         // let normal links in navigation redirect to location
-        if (href.substring(0, 4) === 'http' || (href.substring(0, 5) === 'https' || href.substring(0, 7) === 'mailto:' || href.substring(0, 1) === '/')) {
+        if (href.substring(0, 4) === 'http' || (href.substring(0, 5) === 'https' ||
+            href.substring(0, 7) === 'mailto:' || href.substring(0, 1) === '/')) {
           return true;
         }
 
@@ -115,14 +115,14 @@
       });
 
 
-      /* v1.1.0: Main function, then on bottom called window.scroll, ready and resize */
+      /* Main function, then on bottom called window.scroll, ready and resize */
       var mainFunc = function() {
 
         // cache window and window position from the top
         var win = $(window),
-          windowPosition = win.scrollTop(),
-          windowWidth = win.width(),
-          windowHeight = win.height();
+            windowPosition = win.scrollTop(),
+            windowWidth = win.width(),
+            windowHeight = win.height();
 
         // optional mobileWidth
         if (!options.mobile && windowWidth < options.mobileWidth) {
@@ -136,7 +136,7 @@
         // add activeClass to the div that is passing the top of the window
         sections.each(function() {
           var top = $(this).offset().top - thisHeight,
-            bottom = $(this).outerHeight(true) + top;
+              bottom = $(this).outerHeight(true) + top;
 
           if ((windowPosition >= top) && (windowPosition <= bottom)) {
             if (options.selector === 'a') {
@@ -199,18 +199,18 @@
 
         // grab bottom position of last section
         var lastSection = sections.last(),
-          lastSectionBottom = lastSection.offset().top + lastSection.outerHeight(true);
+            lastSectionBottom = lastSection.offset().top + lastSection.outerHeight(true);
+
         /* 2.) As soon as we hit the bottom of the page */
         if (win.scrollTop() + windowHeight >= $(document).height() && windowPosition <= lastSectionBottom) {
 
           // remove activeClass from menuItem before the last and add activeClass to the lastests one
           menuItems.removeClass(options.activeClass).last().addClass(options.activeClass);
-
         }
 
         /* 3.) As soon as we get back to the top of the page */
         // if top of the window is over this() (nav container)
-        if (windowPosition <= ($selfScrollTop + options.startAt) - 2) {
+        if (windowPosition <= $selfScrollTop - 2) {
           $self.removeClass(options.cssAnimation + ' animated');
 
           // if jQuery effects are turned on
@@ -244,9 +244,9 @@
             // set initial position of this() and initial CSS top property
             $self.css({
               'position': $selfPosition,
-              //'top': $topOffset
+              'top': $topOffset
             }).stop().animate({
-              //top: $topOffset
+              top: $topOffset
             }, options.animDuration, options.easing);
           }
         } // ( windowPosition <= $selfScrollTop ) end

@@ -10,7 +10,7 @@ Include reference to jQuery library, jQuery easing plugin (optional), animate.CS
 <!-- all these references goes before the closing body tag-->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="//cdn.jsdelivr.net/stickynavbar.js/1.2.0/jquery.stickyNavbar.min.js"></script>
+<script src="//cdn.jsdelivr.net/stickynavbar.js/1.3.0/jquery.stickyNavbar.min.js"></script>
 ```
 
 ## 2. HTML Markup
@@ -115,8 +115,13 @@ Copyright (C) 2014 Jozef Butko<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
 ## Changelog
+### 1.3.0
+- set keyboard focus to selected section after navigation - pull request jbutko/stickyNavbar.js#26 by @jacktonkin<br>
+- allow relative links - pull request jbutko/stickyNavbar.js#25 by @stebru<br>
+06/06/2015
+
 ### 1.2.2
-- Improve highlighting of last menu item - pull request #24 by marspe<br>
+- Improve highlighting of last menu item - pull request jbutko/stickyNavbar.js#24 by marspe<br>
 15/05/2015
 
 ### 1.2.1
@@ -133,7 +138,7 @@ Copyright (C) 2014 Jozef Butko<br>
 20/09/2014
 
 ### 1.1.2
-- ignore external links and just let them open fix - pull request #15 by Globegitter<br>
+- ignore external links and just let them open fix - pull request jbutko/stickyNavbar.js#15 by @Globegitter<br>
 25/07/2014
 
 ### 1.1.1
