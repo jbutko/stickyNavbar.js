@@ -47,6 +47,8 @@
       }, prop),
       sections = $('.' + options.sectionSelector);
 
+    // Make sections focusable by scripts
+    sections.attr('tabindex', -1);
 
     return this.each(function() {
 
@@ -107,6 +109,9 @@
           duration: options.animDuration,
           easing: options.easing
         });
+
+        // Set keyboard focus to selected section
+        document.getElementById(currentHref).focus();
       });
 
 
