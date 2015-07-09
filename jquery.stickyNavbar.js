@@ -107,11 +107,12 @@
           scrollTop: toScroll
         }, {
           duration: options.animDuration,
-          easing: options.easing
+          easing: options.easing,
+          complete: function () {
+            // Set keyboard focus to selected section
+            document.getElementById(currentHref).focus();
+          }
         });
-
-        // Set keyboard focus to selected section
-        document.getElementById(currentHref).focus();
       });
 
 
