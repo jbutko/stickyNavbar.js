@@ -1,5 +1,5 @@
 /*
- * stickyNavbar.js v1.3.0
+ * stickyNavbar.js v1.3.1
  * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
@@ -198,59 +198,62 @@
           }).removeClass(options.stickyModeClass).addClass(' ' + options.unstickyModeClass);
         }
 
-        // grab bottom position of last section
-        var lastSection = sections.last(),
-            lastSectionBottom = lastSection.offset().top + lastSection.outerHeight(true);
 
-        /* 2.) As soon as we hit the bottom of the page */
-        if (win.scrollTop() + windowHeight >= $(document).height() && windowPosition <= lastSectionBottom) {
+        if (typeof lastSection !== 'undefined') {
+          // grab bottom position of last section
+          var lastSection = sections.last(),
+              lastSectionBottom = lastSection.offset().top + lastSection.outerHeight(true);
 
-          // remove activeClass from menuItem before the last and add activeClass to the lastests one
-          menuItems.removeClass(options.activeClass).last().addClass(options.activeClass);
-        }
+          /* 2.) As soon as we hit the bottom of the page */
+          if (win.scrollTop() + windowHeight >= $(document).height() && windowPosition <= lastSectionBottom) {
 
-        /* 3.) As soon as we get back to the top of the page */
-        // if top of the window is over this() (nav container)
-        if (windowPosition <= $selfScrollTop - 2) {
-          $self.removeClass(options.cssAnimation + ' animated');
+            // remove activeClass from menuItem before the last and add activeClass to the lastests one
+            menuItems.removeClass(options.activeClass).last().addClass(options.activeClass);
+          }
 
-          // if jQuery effects are turned on
-          if (options.jqueryEffects) {
+          /* 3.) As soon as we get back to the top of the page */
+          // if top of the window is over this() (nav container)
+          if (windowPosition <= $selfScrollTop - 2) {
+            $self.removeClass(options.cssAnimation + ' animated');
 
-            // if we are at the very top of the page remove active class
-            if (windowPosition === 0) {
-              menuItems.removeClass(options.activeClass);
-            }
+            // if jQuery effects are turned on
+            if (options.jqueryEffects) {
 
-            // if the top of the window is under the this() stick the nav and start the animation
-            if (windowPosition >= $selfScrollTop) {
-              $self.css({
-                'position': 'fixed',
-                'zIndex': options.zindex
-              }).hide().stop()[options.jqueryAnim](options.animDuration, options.easing);
+              // if we are at the very top of the page remove active class
+              if (windowPosition === 0) {
+                menuItems.removeClass(options.activeClass);
+              }
+
+              // if the top of the window is under the this() stick the nav and start the animation
+              if (windowPosition >= $selfScrollTop) {
+                $self.css({
+                  'position': 'fixed',
+                  'zIndex': options.zindex
+                }).hide().stop()[options.jqueryAnim](options.animDuration, options.easing);
+              } else {
+                $self.css({
+                  'position': $selfPosition,
+                  'zIndex': options.zindex
+                });
+              }
+
+              // if jQuery effects are turned off
             } else {
+
+              // if we are at the very top of the page remove active class
+              if (windowPosition === 0) {
+                menuItems.removeClass(options.activeClass);
+              }
+              // set initial position of this() and initial CSS top property
               $self.css({
                 'position': $selfPosition,
-                'zIndex': options.zindex
-              });
+                'top': $topOffset
+              }).stop().animate({
+                top: $topOffset
+              }, options.animDuration, options.easing);
             }
-
-            // if jQuery effects are turned off
-          } else {
-
-            // if we are at the very top of the page remove active class
-            if (windowPosition === 0) {
-              menuItems.removeClass(options.activeClass);
-            }
-            // set initial position of this() and initial CSS top property
-            $self.css({
-              'position': $selfPosition,
-              'top': $topOffset
-            }).stop().animate({
-              top: $topOffset
-            }, options.animDuration, options.easing);
-          }
-        } // ( windowPosition <= $selfScrollTop ) end
+          } // ( windowPosition <= $selfScrollTop ) end
+        }
 
       };
 
