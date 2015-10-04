@@ -1,5 +1,5 @@
 /*
- * stickyNavbar.js v1.3.1
+ * stickyNavbar.js v1.3.2
  * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
@@ -15,9 +15,9 @@
  * jQuery easing plugin:
  * http://gsgd.co.uk/sandbox/jquery/easing/
  *
- * COPYRIGHT (C) 2014 Jozef Butko
+ * COPYRIGHT (C) 2014-2015 Jozef Butko
  * https://github.com/jbutko
- * LAST UPDATE: 06/06/2015
+ * LAST UPDATE: 04/10/2015
  *
  */
 ;(function($, window, document) {
@@ -81,8 +81,7 @@
         }
 
         // let normal links in navigation redirect to location
-        if (href.substring(0, 4) === 'http' || (href.substring(0, 5) === 'https' ||
-            href.substring(0, 7) === 'mailto:' || href.substring(0, 1) === '/')) {
+        if (href.substring(0, 4) === 'http' || (href.substring(0, 5) === 'https' || href.substring(0, 7) === 'mailto:' || href.substring(0, 1) === '/')) {
           return true;
         }
 
