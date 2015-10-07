@@ -44,7 +44,8 @@
         zindex: 9999, // The zindex value to apply to the element: default 9999, other option is 'auto'
         stickyModeClass: 'sticky', // Class that will be applied to 'this' in sticky mode
         unstickyModeClass: 'unsticky', // Class that will be applied to 'this' in non-sticky mode
-        anchorLinks: true //Set to false if not using anchor links
+        anchorLinks: true, //Set to false if not using anchor links
+        hide: 'itemHide' //Class that will only display item when scroll is activated
       }, prop),
       sections = $('.' + options.sectionSelector);
 
@@ -149,7 +150,8 @@
             }
           }
         });
-
+        // hide any items with hide class
+        $('.'+options.hide).hide(); 
         /* 1.) As soon as we start scrolling */
         if (windowPosition >= $selfScrollTop + options.startAt) {
 
@@ -161,7 +163,8 @@
             'position': 'fixed',
             'zIndex': options.zindex
           }).stop();
-
+           //look for element that has the hidden element
+          $('.'+options.hide).show(); 
           // if jQuery effects are turned on
           if (options.jqueryEffects) {
             if (!options.animateCSSRepeat) {
