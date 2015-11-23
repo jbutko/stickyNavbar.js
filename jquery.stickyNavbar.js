@@ -61,7 +61,14 @@
           $topOffset = $self.css('top') === 'auto' ? 0 : $self.css('top'), // Top property of this: if not set = 0
           menuItems = options.selector === 'a' ? $self.find('li a') : $self.find('li'), // Navigation lists or links
           menuItemsHref = $self.find('li a[href*=#]'), // href attributes of navigation links
-          windowPosition = $(window).scrollTop();
+          windowPosition = $(window).scrollTop(),
+          $placeholder = $('<div class="sticky-placeholder"></div>'); // placeholder prevent document height collapse when this in sticy mode
+
+      // copy height
+      $placeholder.css({
+        'display': 'none',
+        'height': thisHeight
+      }).insertBefore($self);
 
       /* Smooth scrolling logic */
       menuItems.click(function(e) {
@@ -159,6 +166,9 @@
             'zIndex': options.zindex
           }).stop();
 
+          // when this fixed, placeholder will keep document height
+          $placeholder.css('display','block');
+
           // if jQuery effects are turned on
           if (options.jqueryEffects) {
             if (!options.animateCSSRepeat) {
@@ -195,6 +205,9 @@
             'position': $selfPosition,
             'zIndex': $selfZindex
           }).removeClass(options.stickyModeClass).addClass(' ' + options.unstickyModeClass);
+
+          $placeholder.css('display', 'none');
+
         }
 
 
@@ -229,11 +242,17 @@
                   'position': 'fixed',
                   'zIndex': options.zindex
                 }).hide().stop()[options.jqueryAnim](options.animDuration, options.easing);
+
+                $placeholder.css('display', 'block');
+
               } else {
                 $self.css({
                   'position': $selfPosition,
                   'zIndex': options.zindex
                 });
+
+                $placeholder.css('display', 'none');
+
               }
 
               // if jQuery effects are turned off
@@ -250,6 +269,8 @@
               }).stop().animate({
                 top: $topOffset
               }, options.animDuration, options.easing);
+
+              $placeholder.css('display', 'none');
             }
           } // ( windowPosition <= $selfScrollTop ) end
         }
