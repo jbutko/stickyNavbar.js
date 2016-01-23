@@ -67,6 +67,7 @@ Add `active` class into your `style.css` and style it as you like, eg.:
 }
 ```
 *Note: You can change `active` class to anything you want and pass your own class into options object of stickyNavbar function *
+Be sure to add top:0 to '.sticky'. 
 
 ## 4. jQuery:
 Call stickyNavbar function on the navigation wrapper (`.header`), nav tag or ul tag either without options object:
