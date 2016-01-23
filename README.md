@@ -66,7 +66,7 @@ Add `active` class into your `style.css` and style it as you like, eg.:
 		transform: translate3d(0, 0, 0); // hardware acceleration of CSS animation
 }
 ```
-*Note: You can change `active` class to anything you want and pass your own class into options object of stickyNavbar function *
+*Note:* You can change `active` class to anything you want and pass your own class into options object of stickyNavbar function.
 Be sure to add `top: 0` to `.sticky` class if you want your page to be scrolled on top after each page refresh and not to vertical position presents before page refresh.
 
 ## 4. jQuery:
