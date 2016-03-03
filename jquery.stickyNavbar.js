@@ -60,7 +60,7 @@
           $selfScrollTop = $self.offset().top - thisHeight, // scrollTop position of this
           $topOffset = $self.css('top') === 'auto' ? 0 : $self.css('top'), // Top property of this: if not set = 0
           menuItems = options.selector === 'a' ? $self.find('li a') : $self.find('li'), // Navigation lists or links
-          menuItemsHref = $self.find('li a[href*=#]'), // href attributes of navigation links
+          menuItemsHref = $self.find('li a[href*="#"]'), // href attributes of navigation links
           windowPosition = $(window).scrollTop();
 
       /* Smooth scrolling logic */
