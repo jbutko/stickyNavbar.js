@@ -110,12 +110,16 @@ http://www.jozefbutko.com/stickynavbar/ or if you want to play with options: htt
 [jQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ## Contact
-Copyright (C) 2014-2015 Jozef Butko<br>
+Copyright (C) 2014-2016 Jozef Butko<br>
 [www.jozefbutko.com](http://www.jozefbutko.com)<br>
 [www.github.com/jbutko](http://www.github.com/jbutko)<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
 ## Changelog
+### 1.3.3
+- menuItemsHref incorrect selector causes errors - pull request #45 by @dimaip<br>
+14/04/2016
+
 ### 1.3.2
 - add support for relative links<br>
 04/10/2015
