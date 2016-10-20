@@ -10,7 +10,7 @@ Include reference to jQuery library, jQuery easing plugin (optional), animate.CS
 <!-- all these references goes before the closing body tag-->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="//cdn.jsdelivr.net/stickynavbar.js/1.3.0/jquery.stickyNavbar.min.js"></script>
+<script src="//cdn.jsdelivr.net/stickynavbar.js/1.3.3/jquery.stickyNavbar.min.js"></script>
 ```
 
 ## 2. HTML Markup
@@ -116,6 +116,10 @@ Copyright (C) 2014-2016 Jozef Butko<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
 ## Changelog
+### 1.3.4
+- support for relative links in navigation links
+20/10/2016
+
 ### 1.3.3
 - menuItemsHref incorrect selector causes errors - pull request #45 by @dimaip<br>
 14/04/2016

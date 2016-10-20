@@ -1,5 +1,5 @@
 /*
- * stickyNavbar.js v1.3.3
+ * stickyNavbar.js v1.3.4
  * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
@@ -81,7 +81,8 @@
         }
 
         // let normal links in navigation redirect to location
-        if (href.substring(0, 4) === 'http' || (href.substring(0, 5) === 'https' || href.substring(0, 7) === 'mailto:' || href.substring(0, 1) === '/')) {
+        if (href.substring(0, 4) === 'http' || (href.substring(0, 5) === 'https'
+          || href.substring(0, 7) === 'mailto:' || href.substring(0, 1) === '/') || href.substring(0, 3) === '../') {
           return true;
         }
 
