@@ -43,7 +43,8 @@
         mobileWidth: 480, // The viewport width (without scrollbar) under which stickyNavbar will not be applied (due user usability on mobile)
         zindex: 9999, // The zindex value to apply to the element: default 9999, other option is 'auto'
         stickyModeClass: 'sticky', // Class that will be applied to 'this' in sticky mode
-        unstickyModeClass: 'unsticky' // Class that will be applied to 'this' in non-sticky mode
+        unstickyModeClass: 'unsticky', // Class that will be applied to 'this' in non-sticky mode
+        menuOffest:0 // Value that will be used if menu is not on top 0 (css) for section Offset also on scroll
       }, prop),
       sections = $('.' + options.sectionSelector);
 
@@ -97,10 +98,10 @@
         // of each section
         sectionOffsets = {};
         for (i = 0; i < sectionsLength; i++) {
-          sectionOffsets[sections[i].id] = sections[i].offsetTop;
+          sectionOffsets[sections[i].id] = $(sections[i]).offset().top;
         }
 
-        var toScroll = $self.hasClass(options.unstickyModeClass) ? sectionOffsets[currentHref] - 2 * thisHeight + 2 + 'px' : sectionOffsets[currentHref] - thisHeight + 2 + 'px';
+        var toScroll = $self.hasClass(options.unstickyModeClass) ? sectionOffsets[currentHref] - 2 * thisHeight + 2 -options.menuOffest +'px' : sectionOffsets[currentHref] - thisHeight + 2 -options.menuOffest+ 'px';
 
         // on nav click navigate to selected section
         $('html, body').stop().animate({
