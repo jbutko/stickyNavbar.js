@@ -24,7 +24,7 @@
 
   'use strict';
 
-  $.fn.stickyNavbar = function(prop) {
+  $.fn.stickyNavbar = function() {
 
     // Set default values
     var options = $.extend({
@@ -43,8 +43,11 @@
         mobileWidth: 480, // The viewport width (without scrollbar) under which stickyNavbar will not be applied (due user usability on mobile)
         zindex: 9999, // The zindex value to apply to the element: default 9999, other option is 'auto'
         stickyModeClass: 'sticky', // Class that will be applied to 'this' in sticky mode
-        unstickyModeClass: 'unsticky' // Class that will be applied to 'this' in non-sticky mode
-      }, prop),
+        unstickyModeClass: 'unsticky', // Class that will be applied to 'this' in non-sticky mode
+        onScroll: function(){ }, //function called when sticky is activated
+        onReset: function() { } //function when stickyNav is set at 0px or top. 
+
+      }, arguments[0] || {}),
       sections = $('.' + options.sectionSelector);
 
     // Make sections focusable by scripts
@@ -118,6 +121,7 @@
 
       /* Main function, then on bottom called window.scroll, ready and resize */
       var mainFunc = function() {
+          
 
         // cache window and window position from the top
         var win = $(window),
@@ -151,6 +155,7 @@
         /* 1.) As soon as we start scrolling */
         if (windowPosition >= $selfScrollTop + options.startAt) {
 
+            options.onScroll.call(this); //call options callback function 
           // add 'sticky' class to this as soon as 'this' is in sticky mode
           $self.removeClass(options.unstickyModeClass).addClass(' ' + options.stickyModeClass);
 
@@ -190,7 +195,7 @@
 
           // if top of the window is over this() (nav container)
         } else {
-
+            options.onReset.call(this); //call options callback function
           // add 'sticky' class to this as soon as 'this' is in sticky mode */
           $self.css({
             'position': $selfPosition,
