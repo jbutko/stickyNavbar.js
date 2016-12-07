@@ -10,7 +10,7 @@ Include reference to jQuery library, jQuery easing plugin (optional), animate.CS
 <!-- all these references goes before the closing body tag-->
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-<script src="//cdn.jsdelivr.net/stickynavbar.js/1.3.0/jquery.stickyNavbar.min.js"></script>
+<script src="//cdn.jsdelivr.net/stickynavbar.js/1.3.3/jquery.stickyNavbar.min.js"></script>
 ```
 
 ## 2. HTML Markup
@@ -66,7 +66,8 @@ Add `active` class into your `style.css` and style it as you like, eg.:
 		transform: translate3d(0, 0, 0); // hardware acceleration of CSS animation
 }
 ```
-*Note: You can change `active` class to anything you want and pass your own class into options object of stickyNavbar function *
+*Note:* You can change `active` class to anything you want and pass your own class into options object of stickyNavbar function.
+Be sure to add `top: 0` to `.sticky` class if you want your page to be scrolled on top after each page refresh and not to vertical position presents before page refresh.
 
 ## 4. jQuery:
 Call stickyNavbar function on the navigation wrapper (`.header`), nav tag or ul tag either without options object:
@@ -109,12 +110,20 @@ http://www.jozefbutko.com/stickynavbar/ or if you want to play with options: htt
 [jQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ## Contact
-Copyright (C) 2014-2015 Jozef Butko<br>
+Copyright (C) 2014-2016 Jozef Butko<br>
 [www.jozefbutko.com](http://www.jozefbutko.com)<br>
 [www.github.com/jbutko](http://www.github.com/jbutko)<br>
 [@jozefbutko](http://www.twitter.com/jozefbutko)
 
 ## Changelog
+### 1.3.4
+- support for relative links in navigation links
+20/10/2016
+
+### 1.3.3
+- menuItemsHref incorrect selector causes errors - pull request #45 by @dimaip<br>
+14/04/2016
+
 ### 1.3.2
 - add support for relative links<br>
 04/10/2015

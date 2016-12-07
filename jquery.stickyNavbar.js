@@ -1,5 +1,5 @@
 /*
- * stickyNavbar.js v1.3.2
+ * stickyNavbar.js v1.3.4
  * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
@@ -15,9 +15,9 @@
  * jQuery easing plugin:
  * http://gsgd.co.uk/sandbox/jquery/easing/
  *
- * COPYRIGHT (C) 2014-2015 Jozef Butko
+ * COPYRIGHT (C) 2014-2016 Jozef Butko
  * https://github.com/jbutko
- * LAST UPDATE: 04/10/2015
+ * LAST UPDATE: 14/04/2016
  *
  */
 ;(function($, window, document) {
@@ -60,7 +60,7 @@
           $selfScrollTop = $self.offset().top - thisHeight, // scrollTop position of this
           $topOffset = $self.css('top') === 'auto' ? 0 : $self.css('top'), // Top property of this: if not set = 0
           menuItems = options.selector === 'a' ? $self.find('li a') : $self.find('li'), // Navigation lists or links
-          menuItemsHref = $self.find('li a[href*=#]'), // href attributes of navigation links
+          menuItemsHref = $self.find('li a[href*="#"]'), // href attributes of navigation links
           windowPosition = $(window).scrollTop();
 
       /* Smooth scrolling logic */
@@ -81,7 +81,8 @@
         }
 
         // let normal links in navigation redirect to location
-        if (href.substring(0, 4) === 'http' || (href.substring(0, 5) === 'https' || href.substring(0, 7) === 'mailto:' || href.substring(0, 1) === '/')) {
+        if (href.substring(0, 4) === 'http' || (href.substring(0, 5) === 'https'
+          || href.substring(0, 7) === 'mailto:' || href.substring(0, 1) === '/') || href.substring(0, 3) === '../') {
           return true;
         }
 
