@@ -1,6 +1,10 @@
 # stickyNavbar.js
 stickyNavbar.js: Fancy sticky navigation jQuery plugin with smart anchor links highlighting
 
+# Maintainers Wanted
+
+Because I no longer have time to support and maintain this plugin I am looking for developer who would like to take over this project and add new functionality, solve issues etc. You can contact me through my twitter account: [@jozefbutko](https://twitter.com/jozefbutko)
+
 ## 1. Setup
 Include reference to jQuery library, jQuery easing plugin (optional), animate.CSS (optional, not working in < IE9) and stickyNavbar itself at the bottom of the page before the closing `body` tag:
 
