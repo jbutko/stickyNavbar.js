@@ -260,7 +260,7 @@
       $(window).scroll(mainFunc); // scroll fn end
       $(window).ready(mainFunc);
       $(window).resize(mainFunc);
-      $(window).load(mainFunc);
+      $(window).on('load', mainFunc);
 
     }); // return this.each end
   }; // $.fn.stickyNavbar end
