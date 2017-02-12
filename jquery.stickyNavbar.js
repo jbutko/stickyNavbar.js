@@ -110,7 +110,11 @@
           easing: options.easing,
           complete: function () {
             // Set keyboard focus to selected section
-            document.getElementById(currentHref).focus();
+            if ( currentHref !== "")
+            {
+            	document.getElementById(currentHref).focus();
+            }
+            
           }
         });
       });

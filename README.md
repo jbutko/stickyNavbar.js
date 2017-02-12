@@ -104,7 +104,8 @@ $(function () {
 	});
 });
 ```
-
+## 5. Notes
+- If using Bootstrap 3 or 4 StickyNav will be ignored if the navigations top level parent anchor link is set to '' instead of #. 
 ## 5. Demo
 http://www.jozefbutko.com/stickynavbar/ or if you want to play with options: http://jsbin.com/wuluj/4/edit
 
