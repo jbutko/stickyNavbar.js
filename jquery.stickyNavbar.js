@@ -257,10 +257,10 @@
 
       };
 
-      $(window).scroll(mainFunc); // scroll fn end
-      $(window).ready(mainFunc);
-      $(window).resize(mainFunc);
-      $(window).load(mainFunc);
+      $(window).on('scroll', mainFunc); // scroll fn end
+      $(window).on('ready', mainFunc);
+      $(window).on('resize, mainFunc);
+      $(window).on('load', mainFunc);
 
     }); // return this.each end
   }; // $.fn.stickyNavbar end
