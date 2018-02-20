@@ -20,7 +20,7 @@
  * LAST UPDATE: 14/04/2016
  *
  */
-;(function($, window, document) {
+(function($, window, document) {
 
   'use strict';
 
