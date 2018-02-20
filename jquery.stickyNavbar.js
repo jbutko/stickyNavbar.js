@@ -77,7 +77,7 @@
         if (options.selector === 'li') {
           href = $(this).children('a').attr('href');
         } else {
-          href = $(this).attr('href');
+          href = $(this).attr('href') || '/';
         }
 
         // let normal links in navigation redirect to location
