@@ -4,6 +4,7 @@
   "description": "Fancy sticky navigation jQuery plugin with smart anchor links highlighting",
   "main": "jquery.stickyNavbar.js",
   "dependencies": {
+    "gulp-sass": "^4.0.2",
     "jquery": "^1.10.2"
   },
   "devDependencies": {
