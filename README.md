@@ -121,8 +121,8 @@ Copyright (C) 2014-2019 Jozef Butko<br>
 
 ## Changelog
 ### 1.3.5
-- support for relative links in navigation links
-15/01/2019 missing single quote fix
+- missing single quote fix
+15/01/2019
 
 ### 1.3.4
 - support for relative links in navigation links
