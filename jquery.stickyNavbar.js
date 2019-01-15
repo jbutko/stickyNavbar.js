@@ -259,7 +259,7 @@
 
       $(window).on('scroll', mainFunc); // scroll fn end
       $(window).on('ready', mainFunc);
-      $(window).on('resize, mainFunc);
+      $(window).on('resize', mainFunc);
       $(window).on('load', mainFunc);
 
     }); // return this.each end
