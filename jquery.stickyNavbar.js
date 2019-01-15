@@ -1,9 +1,9 @@
 /*
- * stickyNavbar.js v1.3.4
+ * stickyNavbar.js v1.3.5
  * https://github.com/jbutko/stickyNavbar.js
  * Fancy sticky navigation jQuery plugin with smart anchor links highlighting
  *
- * Developed and maintenained under MIT licence by Jozef Butko - www.jozefbutko.com
+ * Developed and maintenained under MIT licence by Jozef Butko - https://www.jozefbutko.com
  * http://www.opensource.org/licenses/MIT
 
  * Original jquery-browser code Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors
@@ -15,9 +15,9 @@
  * jQuery easing plugin:
  * http://gsgd.co.uk/sandbox/jquery/easing/
  *
- * COPYRIGHT (C) 2014-2016 Jozef Butko
+ * COPYRIGHT (C) 2014-2019 Jozef Butko
  * https://github.com/jbutko
- * LAST UPDATE: 14/04/2016
+ * LAST UPDATE: 15/01/2019
  *
  */
 (function($, window, document) {

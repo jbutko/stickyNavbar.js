@@ -106,7 +106,7 @@ $(function () {
 ```
 
 ## 5. Demo
-http://www.jozefbutko.com/stickynavbar/ or if you want to play with options: http://jsbin.com/wuluj/4/edit
+https://www.jozefbutko.com/stickynavbar/ or if you want to play with options: http://jsbin.com/wuluj/4/edit
 
 ## 6. Credits
 [jQuery](http://api.jquery.com/)<br>
@@ -114,12 +114,16 @@ http://www.jozefbutko.com/stickynavbar/ or if you want to play with options: htt
 [jQuery Easing Plugin](http://gsgd.co.uk/sandbox/jquery/easing/)
 
 ## Contact
-Copyright (C) 2014-2016 Jozef Butko<br>
-[www.jozefbutko.com](http://www.jozefbutko.com)<br>
-[www.github.com/jbutko](http://www.github.com/jbutko)<br>
-[@jozefbutko](http://www.twitter.com/jozefbutko)
+Copyright (C) 2014-2019 Jozef Butko<br>
+[www.jozefbutko.com](https://www.jozefbutko.com)<br>
+[www.github.com/jbutko](https://www.github.com/jbutko)<br>
+[@jozefbutko](https://www.twitter.com/jozefbutko)
 
 ## Changelog
+### 1.3.5
+- support for relative links in navigation links
+15/01/2019 missing single quote fix
+
 ### 1.3.4
 - support for relative links in navigation links
 20/10/2016

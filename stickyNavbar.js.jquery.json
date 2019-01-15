@@ -9,11 +9,11 @@
     "navigation",
     "sticky"
   ],
-  "version": "1.3.4",
+  "version": "1.3.5",
   "author": {
     "name": "Jozef Butko",
     "email": "jbutko@gmail.com",
-    "url": "http://www.jozefbutko.com/resume"
+    "url": "https://www.jozefbutko.com"
   },
   "licenses": [
     {
@@ -22,8 +22,8 @@
     }
   ],
   "homepage": "https://github.com/jbutko/stickyNavbar.js",
-  "docs": "http://www.jozefbutko.com/stickyNavbar/",
-  "demo": "http://www.jozefbutko.com/stickyNavbar/",
+  "docs": "https://www.jozefbutko.com/stickyNavbar/",
+  "demo": "https://www.jozefbutko.com/stickyNavbar/",
   "bugs": "https://github.com/jbutko/stickyNavbar.js/issues?state=open",
   "dependencies": {
     "jquery": "*"
