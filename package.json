@@ -5,7 +5,7 @@
   "main": "jquery.stickyNavbar.js",
   "dependencies": {
     "gulp-sass": "^4.0.2",
-    "jquery": "^1.10.2"
+    "jquery": "^3.5.1"
   },
   "devDependencies": {
     "browser-sync": "^1.9.1"
