@@ -43,7 +43,9 @@
         mobileWidth: 480, // The viewport width (without scrollbar) under which stickyNavbar will not be applied (due user usability on mobile)
         zindex: 9999, // The zindex value to apply to the element: default 9999, other option is 'auto'
         stickyModeClass: 'sticky', // Class that will be applied to 'this' in sticky mode
-        unstickyModeClass: 'unsticky' // Class that will be applied to 'this' in non-sticky mode
+        unstickyModeClass: 'unsticky', // Class that will be applied to 'this' in non-sticky mode
+        anchorLinks: true, //Set to false if not using anchor links
+        hide: 'itemHide' //Class that will only display item when scroll is activated
       }, prop),
       sections = $('.' + options.sectionSelector);
 
@@ -87,7 +89,9 @@
         }
 
         // prevent default click behaviour
-        e.preventDefault();
+        if(options.anchorLinks == true) { 
+          e.preventDefault();
+        }
 
         // href attr of clicked nav link
         currentHref = href.substr(1); // remove # character with substr
@@ -147,7 +151,8 @@
             }
           }
         });
-
+        // hide any items with hide class
+        $('.'+options.hide).hide(); 
         /* 1.) As soon as we start scrolling */
         if (windowPosition >= $selfScrollTop + options.startAt) {
 
@@ -159,7 +164,8 @@
             'position': 'fixed',
             'zIndex': options.zindex
           }).stop();
-
+           //look for element that has the hidden element
+          $('.'+options.hide).show(); 
           // if jQuery effects are turned on
           if (options.jqueryEffects) {
             if (!options.animateCSSRepeat) {
